@@ -37,14 +37,14 @@ public class Accountant{
 		return numberWords + 1;
 	}
 
-
 	public int getNumberSimbols(String phrase){
 		char symbol = 'v';
+		char symbolTwo = ':';
 		int numberSymbols = 0;
 		int size = phrase.length();
 		for (int i = 0; i < size; i++){
-			if (phrase.charAt(i) == ':' + (symbol)){
-					numberSymbols++;
+			if (phrase.charAt(i) == symbolTwo && phrase.charAt(i+1) ==  symbol){
+				numberSymbols++;
 			}
 		}
 		return numberSymbols;
@@ -81,8 +81,8 @@ public class Accountant{
 		Accountant elements = new Accountant();
 		System.out.println("numero de carateres solicitado en la frase: " + elements.getNumberElements("hola como estas", ' '));
 		System.out.println(elements.getBinary("10001"));
-		System.out.println("Numero de palabras: " + elements.getNumberWords("Hola mundo con popo"));
-		System.out.println("Numero de :v : " + elements.getNumberSimbols("hola :v como estas :v hola:"));
+		System.out.println("Numero de palabras: " + elements.getNumberWords("Hola mundo con"));
+		System.out.println("Numero de :v : " + elements.getNumberSimbols("hola :v como estas :v hola"));
 		System.out.println("Total de la suma de los numeros: " + elements.getAddNumber("9d1"));
 		System.out.println("Numero mayor: " + elements.getBiggerNumber("12, 2, 4"));
 	}
